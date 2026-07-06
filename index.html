@@ -38,8 +38,17 @@
             font-size: 1.1rem;
         }
 
-        /* Layout Principal */
-        .container {
+        /* Estrutura de Páginas */
+        .pagina {
+            display: none; /* Esconde as páginas por padrão */
+        }
+
+        .pagina.ativa {
+            display: block; /* Mostra apenas a página com a classe 'ativa' */
+        }
+
+        /* Layout da Página Inicial (Grid) */
+        .grid-container {
             max-width: 1000px;
             margin: 2rem auto;
             padding: 0 1rem;
@@ -48,8 +57,15 @@
             gap: 2rem;
         }
 
-        /* Artigos */
-        article {
+        /* Layout da Página de Conteúdo Único */
+        .single-container {
+            max-width: 800px;
+            margin: 2rem auto;
+            padding: 0 1.5rem;
+        }
+
+        /* Cartões de Conteúdo */
+        .card {
             background: white;
             padding: 1.5rem;
             margin-bottom: 2rem;
@@ -57,41 +73,12 @@
             box-shadow: 0 4px 6px rgba(0,0,0,0.05);
         }
 
-        article h2 {
+        h2 {
             color: #ff7b90;
             margin-bottom: 0.5rem;
         }
 
-        .meta-info {
-            font-size: 0.85rem;
-            color: #777;
-            margin-bottom: 1rem;
+        h3 {
+            color: #ff9aa2;
+            margin: 1.5rem 0 0.5rem 0;
         }
-
-        /* Esconde o texto extra por padrão */
-        .texto-extra {
-            display: none;
-            margin-top: 0.5rem;
-        }
-
-        /* Classe que o JavaScript vai usar para mostrar o texto */
-        .mostrar {
-            display: inline;
-        }
-
-        .read-more {
-            display: inline-block;
-            color: white;
-            background-color: #ffb7b2;
-            padding: 0.5rem 1rem;
-            text-decoration: none;
-            border-radius: 20px;
-            font-weight: bold;
-            margin-top: 1rem;
-            cursor: pointer;
-            border: none;
-            font-size: 0.9rem;
-            transition: background 0.3s;
-        }
-
-        .read-more:hover {
