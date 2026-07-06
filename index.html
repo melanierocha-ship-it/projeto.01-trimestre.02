@@ -1,3 +1,176 @@
-<h1>Meu blog tech</h1>
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mundo dos Gatos | Blog</title>
+    <style>
+        /* Estilos Gerais */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
 
-<p>Vou compartilhar conhecimentos sobre tecnologia e programação</p>
+        body {
+            background-color: #f9f6f0;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        /* Cabeçalho */
+        header {
+            background-color: #ffb7b2;
+            color: white;
+            text-align: center;
+            padding: 2rem 1rem;
+            border-bottom: 5px solid #ff9aa2;
+        }
+
+        header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        header p {
+            font-style: italic;
+            font-size: 1.1rem;
+        }
+
+        /* Layout Principal */
+        .container {
+            max-width: 1000px;
+            margin: 2rem auto;
+            padding: 0 1rem;
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 2rem;
+        }
+
+        /* Artigos */
+        article {
+            background: white;
+            padding: 1.5rem;
+            margin-bottom: 2rem;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+        }
+
+        article h2 {
+            color: #ff7b90;
+            margin-bottom: 0.5rem;
+        }
+
+        .meta-info {
+            font-size: 0.85rem;
+            color: #777;
+            margin-bottom: 1rem;
+        }
+
+        article p {
+            margin-bottom: 1rem;
+        }
+
+        .read-more {
+            display: inline-block;
+            color: white;
+            background-color: #ffb7b2;
+            padding: 0.5rem 1rem;
+            text-decoration: none;
+            border-radius: 20px;
+            font-weight: bold;
+            transition: background 0.3s;
+        }
+
+        .read-more:hover {
+            background-color: #ff9aa2;
+        }
+
+        /* Barra Lateral (Sidebar) */
+        aside {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+            height: fit-content;
+        }
+
+        aside h3 {
+            color: #ff7b90;
+            margin-bottom: 1rem;
+            border-bottom: 2px solid #f9f6f0;
+            padding-bottom: 0.5rem;
+        }
+
+        aside ul {
+            list-style: none;
+        }
+
+        aside ul li {
+            margin-bottom: 0.5rem;
+        }
+
+        aside ul li a {
+            color: #555;
+            text-decoration: none;
+        }
+
+        aside ul li a:hover {
+            color: #ff7b90;
+            text-decoration: underline;
+        }
+
+        /* Rodapé */
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 1.5rem;
+            margin-top: 4rem;
+        }
+
+        /* Responsividade para celular */
+        @media (max-width: 768px) {
+            .container {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>🐾 Mundo dos Gatos 🐾</h1>
+        <p>O universo felino na ponta das suas patas</p>
+    </header>
+
+    <div class="container">
+        
+        <main>
+            <article>
+                <h2>Por que os gatos ronronam? Descubra o mistério!</h2>
+                <div class="meta-info">Postado em 6 de Julho de 2026 por Marina</div>
+                <p>Todo mundo sabe que os gatos ronronam quando estão felizes e relaxados no nosso colo. Mas você sabia que eles também podem ronronar para se acalmar em situações de estresse ou até para curar seus próprios ossos? O ronronar é uma das formas de comunicação mais ricas do mundo animal...</p>
+                <a href="#" class="read-more">Ler mais</a>
+            </article>
+
+            <article>
+                <h2>5 Brinquedos caseiros que seu gato vai amar</h2>
+                <div class="meta-info">Postado em 4 de Julho de 2026 por Carlos</div>
+                <p>Não precisa gastar rios de dinheiro em pet shops para ver seu gatinho feliz. Às vezes, uma simples caixa de papelão vazia ou uma bolinha de papel amassado com um pouco de catnip (a erva do gato) podem garantir horas de diversão pura. Confira nossa lista de brinquedos fáceis de fazer...</p>
+                <a href="#" class="read-more">Ler mais</a>
+            </article>
+        </main>
+
+        <aside>
+            <h3>Sobre o Blog</h3>
+            <p style="margin-bottom: 1.5rem;">Um espaço dedicado a todos os gateiros e gateiras que querem entender melhor seus companheiros de bigodes.</p>
+
+            <h3>Categorias</h3>
+            <ul>
+                <li><a href="#">Comportamento</a></li>
+                <li><a href="#">Alimentação</a></li>
+                <li><a href="#">Dicas e Tutoriais</a></li>
+                <li><a href="#">Saúde Felina</a></li>
+            </ul>
