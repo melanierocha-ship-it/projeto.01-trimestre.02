@@ -3,15 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mundo dos Gatos - Outono & Primavera</title>
+    <title>Mundo Felino - Outono & Primavera</title>
     <style>
-        /* PALETA DE CORES (Outono e Primavera)
-           #F4A261 (Laranja Outonal)
-           #E76F51 (Terracota)
-           #2A9D8F (Verde Primavera)
-           #E9C46A (Amarelo Sol/Folha)
-           #F4F1DE (Pérola/Fundo)
-        */
+        /* Paleta de Cores: Outono (Terrosos/Laranja) e Primavera (Verde/Rosa/Pastel) */
+        :root {
+            --cor-fundo: #fcf8f2; /* Bege claro outonal */
+            --cor-topo: #e28743; /* Laranja outono */
+            --cor-texto: #4a3b32; /* Marrom escuro */
+            --cor-botoes: #ffb7b2; /* Rosa primavera */
+            --cor-botoes-hover: #e0b0ffd0; /* Lavanda */
+            --cor-card: #ffffff;
+            --cor-detalhe-verde: #b5e2b8; /* Verde primavera */
+        }
 
         * {
             margin: 0;
@@ -21,19 +24,17 @@
         }
 
         body {
-            background-color: #F4F1DE;
-            color: #333;
-            overflow-x: hidden;
-            position: relative;
-            min-height: 100vh;
+            background-color: var(--cor-fundo);
+            color: var(--cor-texto);
+            line-height: 1.6;
         }
 
         header {
-            background-color: #E76F51;
+            background-color: var(--cor-topo);
             color: white;
             text-align: center;
-            padding: 2rem;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            padding: 2rem 1rem;
+            border-bottom: 5px solid var(--cor-detalhe-verde);
         }
 
         header h1 {
@@ -41,51 +42,250 @@
             margin-bottom: 0.5rem;
         }
 
-        /* MENU DE NAVEGAÇÃO */
+        /* Menu de Navegação com Botões de Patinha */
         nav {
             display: flex;
             justify-content: center;
-            gap: 2rem;
-            background-color: #2A9D8F;
-            padding: 1rem;
+            flex-wrap: wrap;
+            gap: 15px;
+            padding: 20px;
+            background-color: #f7e1d7;
         }
 
-        /* BOTÃO EM FORMATO DE PATA DE GATO */
-        .btn-pata {
+        .btn-patinha {
             position: relative;
-            width: 70px;
-            height: 60px;
-            background-color: #F4A261;
-            border-radius: 50% 50% 40% 40%;
+            width: 80px;
+            height: 80px;
+            background-color: var(--cor-botoes);
             border: none;
+            border-radius: 50%;
             cursor: pointer;
-            transition: transform 0.2s;
-            box-shadow: 0 4px 5px rgba(0,0,0,0.2);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.75rem;
+            font-weight: bold;
+            color: var(--cor-texto);
+            text-align: center;
+            transition: transform 0.2s, background-color 0.2s;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
         }
 
-        /* Dedinhos da pata */
-        .btn-pata::before {
+        /* Desenho das almofadinhas da pata usando pseudo-elementos */
+        .btn-patinha::before {
             content: '';
             position: absolute;
-            top: -15px;
-            left: 5px;
-            width: 15px;
-            height: 20px;
-            background-color: #F4A261;
+            top: 12px;
+            width: 14px;
+            height: 18px;
+            background-color: rgba(255, 255, 255, 0.6);
             border-radius: 50%;
-            box-shadow: 22px -5px 0 #F4A261, 44px 0px 0 #F4A261;
+            box-shadow: -22px 10px 0 rgba(255, 255, 255, 0.6), 22px 10px 0 rgba(255, 255, 255, 0.6);
         }
 
-        /* Texto/Ícone dentro do botão */
-        .btn-pata span {
-            display: block;
-            text-align: center;
-            color: white;
-            font-weight: bold;
-            font-size: 0.8rem;
-            margin-top: 15px;
-        }
-
-        .btn-pata:hover {
+        .btn-patinha:hover {
+            background-color: var(--cor-botoes-hover);
             transform: scale(1.05);
-            background-
+        }
+
+        .btn-patinha:active {
+            transform: scale(0.95);
+        }
+
+        .btn-texto {
+            margin-top: 25px;
+            z-index: 1;
+            pointer-events: none;
+        }
+
+        /* Container Principal */
+        .container {
+            max-width: 1000px;
+            margin: 30px auto;
+            padding: 0 20px;
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 30px;
+        }
+
+        /* Seção de Início (Gato Preto) */
+        .inicio-secao {
+            background-color: var(--cor-card);
+            padding: 30px;
+            border-radius: 15px;
+            text-align: center;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+            border-left: 8px solid var(--cor-topo);
+        }
+
+        .gato-preto-img {
+            max-width: 100%;
+            height: auto;
+            max-height: 400px;
+            border-radius: 10px;
+            margin-top: 15px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+        }
+
+        /* Cards de Conteúdo (Escondidos por padrão, aparecem ao clicar) */
+        .aba-conteudo {
+            display: none;
+            background-color: var(--cor-card);
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+            border-left: 8px solid var(--cor-detalhe-verde);
+            animation: fadeIn 0.5s ease;
+        }
+
+        .aba-conteudo.ativa {
+            display: block;
+        }
+
+        .aba-conteudo h2 {
+            margin-bottom: 15px;
+            color: var(--cor-topo);
+        }
+
+        /* Animação das Folhas de Outono */
+        .folha {
+            position: absolute;
+            width: 15px;
+            height: 15px;
+            background-color: #d96831; /* Cor de folha seca */
+            border-radius: 0 15px;
+            pointer-events: none;
+            z-index: 9999;
+            animation: cair 1.5s linear forwards;
+        }
+
+        @keyframes cair {
+            0% {
+                transform: translateY(0) rotate(0deg);
+                opacity: 1;
+            }
+            100% {
+                transform: translateY(150px) translateX(var(--drift)) rotate(360deg);
+                opacity: 0;
+            }
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px;
+            background-color: var(--cor-texto);
+            color: var(--cor-fundo);
+            margin-top: 50px;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Miados & Segredos</h1>
+        <p>O cantinho do comportamento e saúde dos felinos nas cores do ano</p>
+    </header>
+
+    <nav>
+        <button class="btn-patinha" onclick="mudarAba('inicio', event)"><span class="btn-texto">Início</span></button>
+        <button class="btn-patinha" onclick="mudarAba('comportamento', event)"><span class="btn-texto">Instinto</span></button>
+        <button class="btn-patinha" onclick="mudarAba('saude', event)"><span class="btn-texto">Saúde</span></button>
+        <button class="btn-patinha" onclick="mudarAba('cuidados', event)"><span class="btn-texto">Cuidados</span></button>
+        <button class="btn-patinha" onclick="mudarAba('alimentacao', event)"><span class="btn-texto">Nutrição</span></button>
+        <button class="btn-patinha" onclick="mudarAba('brinquedos', event)"><span class="btn-texto">Lazer</span></button>
+    </nav>
+
+    <div class="container">
+
+        <div id="inicio" class="aba-conteudo ativa">
+            <div class="inicio-secao">
+                <h2>Bem-vindo ao Nosso Blog Felino!</h2>
+                <p>Explore as abas acima em formato de patinha para aprender tudo sobre o universo dos gatos. Entenda seus instintos, aprenda a cuidar melhor do seu companheiro e tire dúvidas sobre saúde e alimentação.</p>
+                <img src="https://images.unsplash.com/photo-1514888286974-6c03e2ca1dba?auto=format&fit=crop&q=80&w=800" alt="Gato Preto Lindo" class="gato-preto-img">
+            </div>
+        </div>
+
+        <div id="comportamento" class="aba-conteudo">
+            <h2>Comportamento & Instintos Felinos</h2>
+            <p>Gatos mantêm muitos dos instintos de seus ancestrais selvagens. Arranhar móveis, por exemplo, não é por maldade: serve para afiar as garras e demarcar território. Entender o ronronar e a linguagem corporal (como o movimento das orelhas e da cauda) ajuda a fortalecer o vínculo entre você e seu pet.</p>
+        </div>
+
+        <div id="saude" class="aba-conteudo">
+            <h2>Saúde Felina & Possíveis Doenças</h2>
+            <p>A prevenção é o melhor remédio. Fique atento a doenças comuns como a FIV (Imunodeficiência Felina), a FeLV (Leucemia Felina) e problemas renais crônicos, muito frequentes em gatos mais velhos. Consultas regulares ao veterinário e vacinação em dia salvam vidas.</p>
+        </div>
+
+        <div id="cuidados" class="aba-conteudo">
+            <h2>Como Cuidar do seu Gato</h2>
+            <p>Cuidar de um gato exige gatificação do ambiente (colocar prateleiras e nichos altos), escovação diária dos pelos para evitar bolas de pelo no estômago e, acima de tudo, manter caixas de areia sempre limpas. Gatos são animais extremamente higiênicos!</p>
+        </div>
+
+        <div id="alimentacao" class="aba-conteudo">
+            <h2>Alimentação Adequada</h2>
+            <p>Gatos são carnívoros estritos. Sua dieta deve ser rica em proteínas de origem animal. Combinar a ração seca com a ração úmida (sachês) é uma excelente estratégia para garantir que eles consumam a quantidade de água necessária, prevenindo problemas no trato urinário.</p>
+        </div>
+
+        <div id="brinquedos" class="aba-conteudo">
+            <h2>Brinquedos e Enriquecimento Ambiental</h2>
+            <p>Gatos precisam gastar energia! Brinquedos que imitam presas, como varinhas com penas e ratinhos de corda, estimulam o instinto de caça de forma saudável. Circuitos com bolinhas e arranhadores verticais também ajudam a combater o tédio e o estresse.</p>
+        </div>
+
+    </div>
+
+    <footer>
+        <p>&copy; 2026 Mundo Felino. Feito com amor, folhas de outono e flores de primavera.</p>
+    </footer>
+
+    <script>
+        // Função para alternar entre as abas do blog
+        function mudarAba(idAba, evento) {
+            // Esconde todas as abas
+            const abas = document.querySelectorAll('.aba-conteudo');
+            abas.forEach(aba => aba.classList.remove('ativa'));
+
+            // Mostra a aba clicada
+            const abaAlvo = document.getElementById(idAba);
+            if (abaAlvo) {
+                abaAlvo.classList.add('ativa');
+            }
+
+            // Dispara o efeito das folhas de outono caindo do botão
+            soltarFolhas(evento);
+        }
+
+        // Função que gera o efeito visual das folhas de outono
+        function soltarFolhas(evento) {
+            const botao = evento.currentTarget;
+            const numFolhas = 8; // Quantidade de folhas por clique
+            const coresFolhas = ['#d96831', '#f2a65a', '#b05328', '#e7c169']; // Tons de outono
+
+            for (let i = 0; i < numFolhas; i++) {
+                const folha = document.createElement('div');
+                folha.classList.add('folha');
+
+                // Posição inicial baseada no clique do botão
+                const rect = botao.getBoundingClientRect();
+                folha.style.left = (rect.left + rect.width / 2 + window.scrollX) + 'px';
+                folha.style.top = (rect.top + rect.height / 2 + window.scrollY) + 'px';
+
+                // Propriedades aleatórias para movimento natural
+                folha.style.backgroundColor = coresFolhas[Math.floor(Math.random() * coresFolhas.length)];
+                folha.style.setProperty('--drift', (Math.random() * 100 - 50) + 'px'); // Desvio para os lados
+                folha.style.animationDelay = (Math.random() * 0.2) + 's';
+
+                document.body.appendChild(folha);
+
+                // Remove a folha do HTML após o fim da animação
+                folha.addEventListener('animationend', () => {
+                    folha.remove();
+                });
+            }
+        }
+    </script>
+</body>
+</html>
